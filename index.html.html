@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 18th, Prath 🤍</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+:root {
+  --pink-light: #fce8ee;
+  --pink-mid:   #f7c5d2;
+  --pink:       #f09ab2;
+  --rose:       #e0637f;
+  --red:        #c84160;
+  --deep-red:   #9c2d46;
+  --cream:      #fff8f9;
+  --white:      #ffffff;
+  --text-dark:  #3d1525;
+  --text-mid:   #7a3048;
+  --text-soft:  #b06070;
+  --gold:       #d4a843;
+  --gold-light: #f0cd7a;
+  --gold-pale:  #fdf3dc;
+}
+html,body { min-height:100vh; overflow-x:hidden; }
+body {
+  background: linear-gradient(160deg,#fff5f7 0%,#fef0f4 40%,#fff8f0 100%);
+  font-family:'Lato',sans-serif;
+  font-weight:300;
+  color:var(--text-dark);
+}
+
+/* ═══════════════════════════════════
+   BACKGROUND LAYER
+═══════════════════════════════════ */
+#bg {
+  position:fixed; inset:0;
+  z-index:0; pointer-events:none;
+  overflow:hidden;
+}
+
+/* gradient orbs */
+.orb {
+  position:absolute; border-radius:50%;
+  filter:blur(80px); opacity:0.14;
+  animation:drift ease-in-out infinite;
+}
+.o1{width:550px;height:550px;background:#f09ab2;top:-180px;left:-180px;animation-duration:22s;}
+.o2{width:420px;height:420px;background:#e0637f;bottom:-120px;right:-120px;animation-duration:27s;animation-delay:5s;}
+.o3{width:320px;height:320px;background:#f7c5d2;top:38%;left:52%;animation-duration:18s;animation-delay:9s;}
+.o4{width:260px;height:260px;background:#d4a843;top:62%;left:8%;animation-duration:24s;animation-delay:3s;opacity:0.07;}
+.o5{width:200px;height:200px;background:#f0cd7a;top:18%;right:4%;animation-duration:20s;animation-delay:12s;opacity:0.08;}
+.o6{width:180px;height:180px;background:#f09ab2;top:80%;left:35%;animation-duration:16s;animation-delay:7s;opacity:0.1;}
+.o7{width:140px;height:140px;background:#e0637f;top:5%;left:40%;animation-duration:19s;animation-delay:2s;opacity:0.09;}
+@keyframes drift{
+  0%,100%{transform:translate(0,0);}
+  33%{transform:translate(28px,-28px);}
+  66%{transform:translate(-20px,20px);}
+}
+
+/* static background roses */
+.bg-rose{
+  position:fixed; pointer-events:none; z-index:0;
+  opacity:0.065; animation:roseSway ease-in-out infinite;
+  user-select:none; line-height:1;
+}
+@keyframes roseSway{
+  0%,100%{transform:rotate(-8deg) scale(1);}
+  50%{transform:rotate(8deg) scale(1.06);}
+}
+
+/* gold stars */
+.gstar{
+  position:fixed; pointer-events:none; z-index:0;
+  color:var(--gold); opacity:0;
+  animation:starTwinkle ease-in-out infinite;
+}
+@keyframes starTwinkle{
+  0%,100%{opacity:0;transform:scale(0.4) rotate(0deg);}
+  40%,60%{opacity:0.6;transform:scale(1) rotate(180deg);}
+}
+
+/* gold lines */
+.gline{
+  position:fixed; pointer-events:none; z-index:0;
+  height:1px; left:0; width:100%;
+  background:linear-gradient(90deg,transparent 0%,var(--gold-light) 30%,var(--gold) 50%,var(--gold-light) 70%,transparent 100%);
+  animation:lineFade ease-in-out infinite;
+}
+@keyframes lineFade{0%,100%{opacity:0.05;}50%{opacity:0.16;};}
+
+/* petal fall */
+.petal{
+  position:fixed; pointer-events:none; z-index:0;
+  animation:petalFall linear infinite; opacity:0;
+  user-select:none;
+}
+@keyframes petalFall{
+  0%  {transform:translateY(-50px) rotate(0deg) translateX(0);opacity:0;}
+  6%  {opacity:0.8;}
+  88% {opacity:0.5;}
+  100%{transform:translateY(112vh) rotate(800deg) translateX(50px);opacity:0;}
+}
+
+/* sparkle dots */
+.sdot{
+  position:fixed; pointer-events:none; z-index:0;
+  border-radius:50%;
+  animation:sdotPop ease-in-out infinite;
+}
+@keyframes sdotPop{0%,100%{opacity:0;transform:scale(0);}50%{opacity:0.65;transform:scale(1);}}
+
+/* sparkle cross ✦ */
+.scross{
+  position:fixed; pointer-events:none; z-index:0;
+  font-size:0.75rem; color:var(--gold-light);
+  animation:crossPop ease-in-out infinite; opacity:0;
+}
+@keyframes crossPop{0%,100%{opacity:0;transform:scale(0.3) rotate(0deg);}50%{opacity:0.5;transform:scale(1) rotate(45deg);}}
+
+/* floating hearts */
+.fheart{
+  position:fixed; pointer-events:none; z-index:0;
+  animation:heartRise linear infinite; opacity:0;
+  user-select:none;
+}
+@keyframes heartRise{
+  0%  {transform:translateY(105vh) scale(0.7) rotate(-8deg);opacity:0;}
+  10% {opacity:0.3;}
+  90% {opacity:0.15;}
+  100%{transform:translateY(-5vh) scale(1.05) rotate(8deg);opacity:0;}
+}
+
+/* vine SVG */
+#vine{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.07;}
+
+/* corners */
+.corner{
+  position:fixed;pointer-events:none;z-index:1;
+  animation:cornerGlow ease-in-out infinite; line-height:1;
+}
+@keyframes cornerGlow{0%,100%{opacity:0.18;transform:scale(1);}50%{opacity:0.45;transform:scale(1.14);}}
+.ctl{top:10px;left:10px;} .ctr{top:10px;right:10px;}
+.cbl{bottom:10px;left:10px;} .cbr{bottom:10px;right:10px;}
+
+/* side roses */
+.side-rose{
+  position:fixed;pointer-events:none;z-index:0;
+  opacity:0.12; animation:sideRoseSway ease-in-out infinite;
+  user-select:none;
+}
+@keyframes sideRoseSway{0%,100%{transform:translateY(0) rotate(-4deg);}50%{transform:translateY(-8px) rotate(4deg);}}
+
+/* ═══════════════════════════════════
+   COVER
+═══════════════════════════════════ */
+#cover{
+  position:fixed;inset:0;z-index:50;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:2rem;overflow:hidden;
+  transition:opacity 1.2s ease,transform 1.2s ease;
+}
+#cover::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(145deg,#fce8ee 0%,#f5b8cc 30%,#ed7fa0 60%,#d95478 85%,#b83a5a 100%);
+  z-index:-1;
+}
+#cover::after{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 20% 20%,rgba(255,255,255,0.3) 0%,transparent 50%),
+    radial-gradient(ellipse at 80% 80%,rgba(212,168,67,0.12) 0%,transparent 50%),
+    radial-gradient(ellipse at 50% 50%,rgba(255,255,255,0.06) 0%,transparent 70%);
+  z-index:-1;
+}
+#cover.gone{opacity:0;transform:scale(1.06);pointer-events:none;}
+
+.cv-hearts{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.cv-heart{
+  position:absolute;animation:cvFloat linear infinite;opacity:0;
+}
+@keyframes cvFloat{
+  0%{transform:translateY(110%) scale(0.6) rotate(-12deg);opacity:0;}
+  12%{opacity:0.65;}86%{opacity:0.3;}
+  100%{transform:translateY(-12%) scale(1.1) rotate(12deg);opacity:0;}
+}
+
+.cv-badge{
+  background:rgba(255,255,255,0.28);border:1px solid rgba(255,255,255,0.5);
+  border-radius:50px;padding:0.35rem 1.2rem;
+  font-size:0.62rem;letter-spacing:0.32em;text-transform:uppercase;
+  color:#7a1530;margin-bottom:1.4rem;
+}
+.cv-flowers{font-size:2.8rem;margin-bottom:1.2rem;animation:bob 3s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+.cv-name{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,10vw,5.8rem);font-weight:400;
+  color:#4a0b1c;line-height:1.1;margin-bottom:0.4rem;
+  text-shadow:0 2px 24px rgba(255,255,255,0.35);
+}
+.cv-name em{font-style:italic;color:#8a1e35;}
+.cv-sub{font-size:0.75rem;letter-spacing:0.3em;text-transform:uppercase;color:#8c2840;margin-bottom:2.8rem;}
+.cv-btn{
+  background:var(--deep-red);color:#fff;border:none;
+  padding:0.92rem 2.5rem;border-radius:50px;
+  font-family:'Lato',sans-serif;font-size:0.78rem;letter-spacing:0.25em;text-transform:uppercase;
+  cursor:pointer;transition:transform 0.2s,background 0.2s;
+  box-shadow:0 6px 32px rgba(156,45,70,0.5);
+  animation:btnPulse 2.2s ease-in-out infinite;
+}
+@keyframes btnPulse{0%,100%{box-shadow:0 6px 32px rgba(156,45,70,0.5);}50%{box-shadow:0 12px 44px rgba(156,45,70,0.75);}}
+.cv-btn:hover{background:var(--red);transform:translateY(-3px);}
+
+/* ═══════════════════════════════════
+   APP
+═══════════════════════════════════ */
+#app{
+  max-width:660px;margin:0 auto;padding:3rem 1.4rem 5rem;
+  position:relative;z-index:1;
+  opacity:0;transform:translateY(28px);
+  transition:opacity 0.9s ease 0.3s,transform 0.9s ease 0.3s;
+}
+#app.show{opacity:1;transform:translateY(0);}
+
+/* song */
+.song-section{margin-bottom:2.8rem;}
+.song-label{
+  text-align:center;font-size:0.65rem;letter-spacing:0.35em;
+  text-transform:uppercase;color:var(--text-soft);margin-bottom:1rem;
+}
+.song-card{
+  background:var(--white);border:1.5px solid var(--pink-mid);border-radius:18px;
+  overflow:hidden;box-shadow:0 6px 32px rgba(200,65,96,0.13);position:relative;
+}
+.song-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold-light),var(--rose),var(--gold-light));
+}
+.song-card iframe{display:block;width:100%;border:none;}
+.song-hint{
+  text-align:center;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--text-soft);padding:0.7rem 1rem 0.9rem;
+  background:var(--pink-light);border-top:1px solid var(--pink-mid);
+}
+
+/* header */
+.letter-header{text-align:center;margin-bottom:2.5rem;}
+.header-date{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--text-soft);margin-bottom:1rem;}
+.header-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,6vw,3.5rem);font-weight:400;font-style:italic;
+  color:var(--deep-red);line-height:1.2;
+}
+.divider{display:flex;align-items:center;gap:0.7rem;max-width:320px;margin:1.2rem auto;}
+.divider-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-light),var(--pink-mid),var(--gold-light),transparent);}
+.divider-inner{display:flex;gap:0.35rem;font-size:0.9rem;}
+
+/* letter card */
+.letter-card{
+  background:var(--white);border-radius:18px;padding:2.6rem 2.8rem;
+  border:1.5px solid var(--pink-mid);
+  box-shadow:0 4px 30px rgba(200,65,96,0.1),0 0 0 5px rgba(252,232,238,0.45);
+  font-size:1.05rem;line-height:1.95;color:var(--text-mid);
+  position:relative;overflow:hidden;
+}
+.letter-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--gold-light),var(--pink-mid),var(--rose),var(--pink-mid),var(--gold-light));
+}
+.letter-card::after{content:'🌸';position:absolute;bottom:1.2rem;right:1.4rem;font-size:1.2rem;opacity:0.12;}
+.salutation{font-family:'Playfair Display',serif;font-size:1.25rem;font-style:italic;color:var(--red);margin-bottom:1.3em;}
+.letter-card p+p{margin-top:1.2em;}
+.sign-off{margin-top:1.8em;font-family:'Playfair Display',serif;font-style:italic;color:var(--red);font-size:1.1rem;}
+
+/* deco row */
+.deco-row{text-align:center;margin:2.2rem 0 0.5rem;font-size:1.1rem;letter-spacing:0.5em;opacity:0.5;animation:bob 5s ease-in-out infinite;}
+
+/* surprises */
+.surprises-section{margin-top:1rem;}
+.section-label{text-align:center;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-soft);margin-bottom:1.4rem;}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.9rem;}
+.card{
+  aspect-ratio:1;background:var(--white);border:1.5px solid var(--pink-mid);border-radius:16px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;transition:transform 0.25s ease,box-shadow 0.25s ease,background 0.25s ease;
+  position:relative;gap:0.35rem;padding:0.5rem;user-select:none;overflow:hidden;
+}
+.card::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(255,200,215,0.35),transparent 70%);
+  opacity:0;transition:opacity 0.3s;
+}
+.card:hover::after{opacity:1;}
+.card:hover{transform:translateY(-5px) scale(1.03);box-shadow:0 14px 36px rgba(200,65,96,0.22);}
+.card.opened{background:linear-gradient(145deg,#fce8ee,#fdf0f3);border-color:var(--pink);}
+.card-icon{font-size:1.8rem;transition:transform 0.25s;z-index:1;}
+.card:hover .card-icon{transform:scale(1.2) rotate(-6deg);}
+.card-hint{font-size:0.57rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-soft);text-align:center;padding:0 0.3rem;line-height:1.4;z-index:1;}
+.card-check{position:absolute;top:7px;right:9px;font-size:0.6rem;color:var(--rose);opacity:0;transition:opacity 0.3s;z-index:1;}
+.card.opened .card-check{opacity:1;}
+
+.progress-wrap{text-align:center;margin-top:1.5rem;}
+.progress-txt{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-soft);margin-bottom:0.5rem;}
+.bar-bg{height:4px;background:var(--pink-light);border-radius:10px;max-width:200px;margin:0 auto;overflow:hidden;}
+.bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-light),var(--pink),var(--red));border-radius:10px;transition:width 0.6s ease;}
+
+/* footer */
+.footer{text-align:center;margin-top:3.5rem;font-size:1.5rem;letter-spacing:0.5em;animation:bob 4s ease-in-out infinite;opacity:0.7;}
+.footer-text{margin-top:0.8rem;font-family:'Playfair Display',serif;font-style:italic;font-size:0.85rem;color:var(--text-soft);letter-spacing:0.05em;}
+
+/* modal */
+.overlay{
+  position:fixed;inset:0;background:rgba(61,21,37,0.74);
+  backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
+  z-index:80;display:flex;align-items:center;justify-content:center;padding:1.5rem;
+  opacity:0;pointer-events:none;transition:opacity 0.35s ease;
+}
+.overlay.open{opacity:1;pointer-events:all;}
+.modal{
+  background:var(--white);border-radius:24px;padding:2.6rem 2.2rem 2.2rem;
+  max-width:380px;width:100%;text-align:center;position:relative;overflow:hidden;
+  box-shadow:0 24px 70px rgba(158,45,70,0.38);
+  transform:translateY(18px) scale(0.96);transition:transform 0.38s ease;
+}
+.overlay.open .modal{transform:translateY(0) scale(1);}
+.modal::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:5px;
+  background:linear-gradient(90deg,var(--gold-light),var(--pink-mid),var(--rose),var(--red),var(--rose),var(--pink-mid),var(--gold-light));
+}
+.modal-deco{position:absolute;top:12px;right:16px;font-size:1rem;opacity:0.2;}
+.modal-icon{font-size:2.8rem;margin-bottom:0.8rem;display:block;animation:bob 2s ease-in-out infinite;}
+.modal-lbl{font-size:0.63rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-soft);margin-bottom:1rem;}
+.modal-msg{font-family:'Playfair Display',serif;font-style:italic;font-size:1.08rem;color:var(--text-mid);line-height:1.9;}
+.modal-btn{
+  display:inline-block;margin-top:2rem;
+  background:linear-gradient(135deg,var(--rose),var(--red));
+  color:#fff;border:none;padding:0.75rem 2.2rem;border-radius:30px;cursor:pointer;
+  font-family:'Lato',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;
+  transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 16px rgba(158,45,70,0.3);
+}
+.modal-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(158,45,70,0.4);}
+
+@media(max-width:480px){
+  .letter-card{padding:1.7rem 1.4rem;}
+  .grid{gap:0.65rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ BACKGROUND ══ -->
+<div id="bg">
+  <div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+  <div class="orb o4"></div><div class="orb o5"></div><div class="orb o6"></div>
+  <div class="orb o7"></div>
+</div>
+
+<!-- Gold vines SVG -->
+<svg id="vine" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <path d="M0,180 Q180,90 360,200 T720,170 T1080,200 T1440,175" stroke="#d4a843" stroke-width="1.6" fill="none"/>
+  <path d="M0,450 Q200,370 400,460 T800,430 T1200,460 T1440,440" stroke="#d4a843" stroke-width="1" fill="none"/>
+  <path d="M0,720 Q280,640 560,730 T1000,700 T1440,725" stroke="#d4a843" stroke-width="1.3" fill="none"/>
+  <path d="M0,310 Q350,260 700,320 T1440,295" stroke="#d4a843" stroke-width="0.7" fill="none" opacity="0.6"/>
+  <path d="M0,600 Q300,545 600,610 T1200,585 T1440,600" stroke="#d4a843" stroke-width="0.6" fill="none" opacity="0.5"/>
+  <!-- vine dots -->
+  <circle cx="180" cy="178" r="4" fill="#d4a843" opacity="0.55"/>
+  <circle cx="450" cy="198" r="3" fill="#d4a843" opacity="0.45"/>
+  <circle cx="720" cy="170" r="5" fill="#d4a843" opacity="0.5"/>
+  <circle cx="1000" cy="198" r="3" fill="#d4a843" opacity="0.5"/>
+  <circle cx="1300" cy="176" r="4" fill="#d4a843" opacity="0.45"/>
+  <circle cx="250" cy="448" r="3" fill="#d4a843" opacity="0.4"/>
+  <circle cx="600" cy="458" r="4" fill="#d4a843" opacity="0.45"/>
+  <circle cx="950" cy="432" r="3" fill="#d4a843" opacity="0.4"/>
+  <circle cx="1250" cy="458" r="4" fill="#d4a843" opacity="0.4"/>
+  <circle cx="300" cy="718" r="4" fill="#d4a843" opacity="0.4"/>
+  <circle cx="680" cy="728" r="3" fill="#d4a843" opacity="0.35"/>
+  <circle cx="1050" cy="698" r="4" fill="#d4a843" opacity="0.4"/>
+  <circle cx="1350" cy="722" r="3" fill="#d4a843" opacity="0.35"/>
+  <!-- tiny leaf shapes -->
+  <ellipse cx="360" cy="192" rx="8" ry="4" fill="#d4a843" opacity="0.25" transform="rotate(-20,360,192)"/>
+  <ellipse cx="900" cy="168" rx="7" ry="3.5" fill="#d4a843" opacity="0.22" transform="rotate(15,900,168)"/>
+  <ellipse cx="500" cy="452" rx="8" ry="4" fill="#d4a843" opacity="0.2" transform="rotate(-10,500,452)"/>
+  <ellipse cx="800" cy="725" rx="7" ry="3.5" fill="#d4a843" opacity="0.2" transform="rotate(20,800,725)"/>
+</svg>
+
+<!-- Large faded background roses -->
+<div class="bg-rose" style="top:2%;left:0%;font-size:5rem;animation-duration:9s;">🌹</div>
+<div class="bg-rose" style="top:6%;right:1%;font-size:4.5rem;animation-duration:12s;animation-delay:2s;">🌸</div>
+<div class="bg-rose" style="top:20%;left:-1%;font-size:6rem;animation-duration:10s;animation-delay:1s;">🌹</div>
+<div class="bg-rose" style="top:35%;right:0%;font-size:5.5rem;animation-duration:14s;animation-delay:3.5s;">🌸</div>
+<div class="bg-rose" style="top:50%;left:0%;font-size:4.8rem;animation-duration:11s;animation-delay:5s;">🌹</div>
+<div class="bg-rose" style="top:65%;right:1%;font-size:5.2rem;animation-duration:13s;animation-delay:1.5s;">🌺</div>
+<div class="bg-rose" style="top:78%;left:0%;font-size:4.5rem;animation-duration:9s;animation-delay:4s;">🌸</div>
+<div class="bg-rose" style="bottom:2%;right:0%;font-size:5rem;animation-duration:15s;animation-delay:0.5s;">🌹</div>
+<div class="bg-rose" style="bottom:15%;left:1%;font-size:4rem;animation-duration:8s;animation-delay:6s;">🌷</div>
+<div class="bg-rose" style="top:12%;left:47%;font-size:3rem;animation-duration:17s;animation-delay:8s;opacity:0.04;">🌹</div>
+<div class="bg-rose" style="top:55%;left:45%;font-size:3.5rem;animation-duration:19s;animation-delay:10s;opacity:0.035;">🌸</div>
+<div class="bg-rose" style="top:88%;left:48%;font-size:2.8rem;animation-duration:21s;animation-delay:13s;opacity:0.04;">🌺</div>
+
+<!-- side accent roses -->
+<div class="side-rose" style="top:25%;left:0;font-size:2.2rem;opacity:0.1;animation-duration:7s;">🌸</div>
+<div class="side-rose" style="top:45%;right:0;font-size:2rem;opacity:0.1;animation-duration:9s;animation-delay:2s;">🌹</div>
+<div class="side-rose" style="top:70%;left:0;font-size:2.4rem;opacity:0.1;animation-duration:8s;animation-delay:4s;">🌷</div>
+<div class="side-rose" style="top:15%;right:0;font-size:2rem;opacity:0.09;animation-duration:11s;animation-delay:1s;">🌺</div>
+
+<!-- Gold stars -->
+<div class="gstar" style="top:8%;left:12%;animation-duration:2.4s;font-size:1rem;">✦</div>
+<div class="gstar" style="top:16%;right:15%;animation-duration:3.1s;animation-delay:0.8s;font-size:0.9rem;">✧</div>
+<div class="gstar" style="top:28%;left:6%;animation-duration:2.7s;animation-delay:1.5s;">✦</div>
+<div class="gstar" style="top:38%;right:9%;animation-duration:3.4s;animation-delay:0.3s;font-size:1.2rem;">✦</div>
+<div class="gstar" style="top:50%;left:14%;animation-duration:2.1s;animation-delay:2s;">✧</div>
+<div class="gstar" style="top:62%;right:11%;animation-duration:3s;animation-delay:1.2s;">✦</div>
+<div class="gstar" style="top:72%;left:18%;animation-duration:2.8s;animation-delay:3s;font-size:1.1rem;">✧</div>
+<div class="gstar" style="top:82%;right:20%;animation-duration:3.6s;animation-delay:0.6s;">✦</div>
+<div class="gstar" style="top:92%;left:22%;animation-duration:2.3s;animation-delay:1.8s;">✧</div>
+<div class="gstar" style="top:5%;left:38%;animation-duration:3.8s;animation-delay:2.5s;font-size:1.3rem;">✦</div>
+<div class="gstar" style="top:48%;right:38%;animation-duration:2.5s;animation-delay:0.4s;">✧</div>
+<div class="gstar" style="top:72%;left:42%;animation-duration:3.2s;animation-delay:3.8s;">✦</div>
+<div class="gstar" style="bottom:8%;left:55%;animation-duration:2.9s;animation-delay:1.6s;">✧</div>
+<div class="gstar" style="top:33%;left:28%;animation-duration:4.1s;animation-delay:4.5s;font-size:0.8rem;">✦</div>
+<div class="gstar" style="top:58%;right:28%;animation-duration:2.6s;animation-delay:5s;font-size:0.85rem;">✧</div>
+<div class="gstar" style="top:18%;left:55%;animation-duration:3.5s;animation-delay:6s;">✦</div>
+
+<!-- Gold horizontal lines -->
+<div class="gline" style="top:12%;animation-duration:7s;animation-delay:0s;"></div>
+<div class="gline" style="top:32%;animation-duration:9s;animation-delay:2s;"></div>
+<div class="gline" style="top:55%;animation-duration:8s;animation-delay:4s;"></div>
+<div class="gline" style="top:76%;animation-duration:6s;animation-delay:1s;"></div>
+<div class="gline" style="top:92%;animation-duration:10s;animation-delay:3s;"></div>
+
+<!-- Sparkle crosses -->
+<div class="scross" style="top:22%;left:22%;animation-duration:3s;animation-delay:1s;">✦</div>
+<div class="scross" style="top:44%;right:25%;animation-duration:2.5s;animation-delay:2.2s;">✦</div>
+<div class="scross" style="top:66%;left:32%;animation-duration:3.8s;animation-delay:0.5s;">✦</div>
+<div class="scross" style="top:85%;right:32%;animation-duration:2.8s;animation-delay:3.5s;">✦</div>
+<div class="scross" style="top:10%;right:42%;animation-duration:4s;animation-delay:1.8s;color:var(--pink);">✦</div>
+<div class="scross" style="top:55%;left:52%;animation-duration:3.2s;animation-delay:4.2s;color:var(--pink);">✦</div>
+
+<!-- Corners -->
+<div class="corner ctl" style="font-size:2.2rem;">🌹</div>
+<div class="corner ctr" style="font-size:2.2rem;animation-delay:1s;">🌸</div>
+<div class="corner cbl" style="font-size:2.2rem;animation-delay:2s;">✿</div>
+<div class="corner cbr" style="font-size:2.2rem;animation-delay:3s;">🌹</div>
+
+<!-- ══ COVER ══ -->
+<div id="cover">
+  <div class="cv-hearts" id="cvHearts"></div>
+  <div class="cv-badge">✦ a gift just for you ✦</div>
+  <div class="cv-flowers">🌸 🌹 🌸</div>
+  <h1 class="cv-name">Happy 18th,<br><em>Prath</em></h1>
+  <p class="cv-sub">made with love, just for you</p>
+  <button class="cv-btn" onclick="openApp()">Open your gift 🤍</button>
+</div>
+
+<!-- ══ APP ══ -->
+<div id="app">
+
+  <div class="song-section">
+    <div class="song-label">🎵 press play — our song</div>
+    <div class="song-card">
+      <iframe
+        src="https://www.youtube.com/embed/7f_mlKlOLMo?rel=0&modestbranding=1"
+        height="220"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+      <div class="song-hint">🌹 so easy (to fall in love) — olivia dean 🌹</div>
+    </div>
+  </div>
+
+  <div class="letter-header">
+    <div class="header-date">For Prath — on his 18th 🤍</div>
+    <h2 class="header-title">To my bubby,</h2>
+    <div class="divider">
+      <div class="divider-line"></div>
+      <div class="divider-inner">🌸 🌹 🌸</div>
+      <div class="divider-line"></div>
+    </div>
+  </div>
+
+  <div class="letter-card">
+    <p class="salutation">Happy 18th birthday, my love 🤍</p>
+    <p>Turning 18 is such a big milestone, and I'm really happy I get to celebrate it with you. I know life is going to bring you so many opportunities because you deserve every good thing that comes your way.</p>
+    <p>I just want you to know how much you mean to me. Thank you for being someone who makes me smile, who makes my days better, and who gives me so much love and happiness. You've become such an important part of my life, and I truly can't imagine things being the same without you in it.</p>
+    <p>Watching you grow into the person you are becoming makes me so proud. You have such a kind heart, and even if you don't always realise it, you impact people around you more than you know — especially me.</p>
+    <p>I hope this year gives you happiness, success, unforgettable memories, and everything your heart wants. No matter what happens, I'll always be cheering for you and believing in you. Thank you for being you.</p>
+    <p class="sign-off">Happy birthday again baby, and welcome to 18 🤍<br>I love you endlessly.</p>
+  </div>
+
+  <div class="deco-row">🌸 ✦ 🌹 ✦ 🌸</div>
+
+  <div class="surprises-section">
+    <div class="section-label">✦ tap each heart to reveal your surprises ✦</div>
+    <div class="grid" id="grid"></div>
+    <div class="progress-wrap">
+      <div class="progress-txt"><span id="cnt">0</span> of 7 opened</div>
+      <div class="bar-bg"><div class="bar-fill" id="bar" style="width:0%"></div></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    🌹 🤍 🌸 🤍 🌹
+    <div class="footer-text">with all my love, forever &amp; always 🤍</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-deco">🌸</div>
+    <span class="modal-icon" id="mIcon"></span>
+    <div class="modal-lbl" id="mTitle"></div>
+    <div class="modal-msg" id="mMsg"></div>
+    <button class="modal-btn" onclick="closeModal()">Close 🤍</button>
+  </div>
+</div>
+
+<script>
+(function(){
+
+  /* ── FALLING PETALS (loads!) ── */
+  var petals = ['🌸','🌹','🌺','✿','💮','🌷','🏵️','🌼'];
+  for(var p=0;p<70;p++){
+    var el=document.createElement('div');
+    el.className='petal';
+    el.textContent=petals[p%petals.length];
+    el.style.left        =(Math.random()*108-4)+'vw';
+    el.style.fontSize    =(0.6+Math.random()*1.2)+'rem';
+    el.style.animationDuration=(6+Math.random()*14)+'s';
+    el.style.animationDelay  =(Math.random()*20)+'s';
+    document.body.appendChild(el);
+  }
+
+  /* ── SPARKLE DOTS ── */
+  var scols=['#f09ab2','#e0637f','#d4a843','#f0cd7a','#f7c5d2','#fff','#fce8ee'];
+  for(var s=0;s<30;s++){
+    var sp=document.createElement('div');
+    sp.className='sdot';
+    var sz=(2+Math.random()*6)+'px';
+    sp.style.width=sz; sp.style.height=sz;
+    sp.style.background=scols[Math.floor(Math.random()*scols.length)];
+    sp.style.left=(Math.random()*100)+'vw';
+    sp.style.top=(Math.random()*100)+'vh';
+    sp.style.animationDuration=(1.4+Math.random()*4)+'s';
+    sp.style.animationDelay  =(Math.random()*7)+'s';
+    document.getElementById('bg').appendChild(sp);
+  }
+
+  /* ── FLOATING HEARTS (bg) ── */
+  var hset=['🤍','🌸','🌹','💕','✿','🌺','✦','💗','🌷'];
+  for(var h=0;h<20;h++){
+    var fh=document.createElement('div');
+    fh.className='fheart';
+    fh.textContent=hset[h%hset.length];
+    fh.style.left=(Math.random()*100)+'vw';
+    fh.style.fontSize=(0.7+Math.random()*0.9)+'rem';
+    fh.style.animationDuration=(14+Math.random()*14)+'s';
+    fh.style.animationDelay  =(Math.random()*18)+'s';
+    document.getElementById('bg').appendChild(fh);
+  }
+
+  /* ── COVER HEARTS ── */
+  var cvH=document.getElementById('cvHearts');
+  var cvSet=['🤍','🌸','🌹','💕','✿','🌺','✦','💗','🌷','🏵️'];
+  for(var c=0;c<28;c++){
+    var ch=document.createElement('div');
+    ch.className='cv-heart';
+    ch.textContent=cvSet[c%cvSet.length];
+    ch.style.left=(Math.random()*100)+'%';
+    ch.style.fontSize=(0.7+Math.random()*1.2)+'rem';
+    ch.style.animationDuration=(4+Math.random()*9)+'s';
+    ch.style.animationDelay  =(Math.random()*13)+'s';
+    cvH.appendChild(ch);
+  }
+
+  /* ── OPEN ── */
+  window.openApp=function(){
+    document.getElementById('cover').classList.add('gone');
+    setTimeout(function(){document.getElementById('app').classList.add('show');},300);
+  };
+
+  /* ── SURPRISES ── */
+  var surprises=[
+    {icon:'💌',hint:'A wish for you', title:'My biggest wish for you', msg:'I wish you a year full of joy, laughter, and all the things that make your heart feel full. You deserve every bit of happiness that comes your way, bubby.'},
+    {icon:'🌹',hint:'What I love most',title:'What I love most about you',msg:'I love how genuinely kind you are — not because you have to be, but because that\'s just who you are. It\'s one of my favourite things about you.'},
+    {icon:'⭐',hint:'A promise',       title:'My promise to you',         msg:'No matter where life takes us, I promise to always be in your corner. Always cheering, always believing, always so proud of you.'},
+    {icon:'🥂',hint:'A toast',         title:'To 18 years of you',        msg:'Here\'s to the person who walked into my life and made it so much brighter. To 18 years of you existing in this world — what a truly beautiful thing.'},
+    {icon:'🎀',hint:'A little secret', title:'A little secret',           msg:'You\'ve made some of my most ordinary days feel like the best days. You probably don\'t even know it — but that\'s the magic of you, Prath.'},
+    {icon:'🤍',hint:'From the heart',  title:'Straight from my heart',    msg:'I\'m really, really glad you were born. The world — and my world — is so much better with you in it. Happy birthday, my love.'},
+    {icon:'🎂',hint:'Welcome to 18',   title:'Welcome to 18, bubby',      msg:'You\'re 18 now. Life is opening up in front of you and you are so ready for it. I can\'t wait to watch you shine. I\'ll be right here, loving every moment. 🤍'},
+  ];
+
+  var opened={},openedCount=0;
+  var grid=document.getElementById('grid');
+  surprises.forEach(function(s,i){
+    var c=document.createElement('div');
+    c.className='card';
+    c.innerHTML='<div class="card-icon">'+s.icon+'</div><div class="card-hint">'+s.hint+'</div><div class="card-check">✓ opened</div>';
+    c.addEventListener('click',function(){showSurprise(i,c);});
+    grid.appendChild(c);
+  });
+
+  window.showSurprise=function(i,card){
+    var s=surprises[i];
+    document.getElementById('mIcon').textContent=s.icon;
+    document.getElementById('mTitle').textContent=s.title;
+    document.getElementById('mMsg').textContent=s.msg;
+    document.getElementById('overlay').classList.add('open');
+    card.classList.add('opened');
+    if(!opened[i]){opened[i]=true;openedCount++;
+      document.getElementById('cnt').textContent=openedCount;
+      document.getElementById('bar').style.width=(openedCount/7*100)+'%';
+    }
+  };
+  window.closeModal=function(){document.getElementById('overlay').classList.remove('open');};
+  document.getElementById('overlay').addEventListener('click',function(e){if(e.target===this)closeModal();});
+})();
+</script>
+</body>
+</html>
